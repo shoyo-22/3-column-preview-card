@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
+  --white: hsl(0, 0%, 100%);
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --padding-default: 1.5rem;
+  --padding-card: 3rem;
+
+  --gap-default: 1.5rem;
+
+  --bradius-card: 0.5rem;
+  --bradius--button: 1.5rem;
+}
+
+.grid-cards {
+  max-width: 58rem;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  padding: var(--padding-default);
+}
+
+.card {
+  padding: var(--padding-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-default);
+}
+
+.card:nth-child(1) {
+  background-color: var(--bright-orange);
+  border-radius: var(--bradius-card) var(--bradius-card) 0 0;
+}
+
+.card:nth-child(1) .button {
+  color: var(--bright-orange);
+}
+
+.card:nth-child(2) {
+  background-color: var(--dark-cyan);
+}
+
+.card:nth-child(2) .button {
+  color: var(--dark-cyan);
+}
+
+.card:nth-child(3) {
+  background-color: var(--very-dark-cyan);
+  border-radius: 0 0 var(--bradius-card) var(--bradius-card);
+}
+
+.card:nth-child(3) .button {
+  color: var(--very-dark-cyan);
+}
+
+.card__image {
+  margin-bottom: 0.75rem;
+}
+
+.card__title {
+  margin-bottom: var(--gap-default);
+  color: var(--very-light-gray);
+  font-family: "Big Shoulders Display", sans-serif;
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+}
+
+.card__copy,
+.button {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.6667;
+}
+
+.card__copy {
+  color: var(--transparent-white);
+}
+
+.button {
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--white);
+  border-radius: var(--bradius--button);
+  background-color: var(--white);
+  transition: all 200ms ease-in-out;
+}
+
+.button:hover {
+  cursor: pointer;
+  color: var(--white) !important;
+  background-color: transparent;
+}
+
+@media (min-width: 37em) {
+  .grid-cards {
+    height: 100vh;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  }
+
+  .card:nth-child(1) {
+    border-radius: var(--bradius-card) 0 0 var(--bradius-card);
+  }
+
+  .card:nth-child(3) {
+    border-radius: 0 var(--bradius-card) var(--bradius-card) 0;
+  }
+
+  .button {
+    margin-top: 3.75rem;
+  }
+}
